@@ -1,3 +1,3 @@
 duck
-moose
+mammoth
 cat
