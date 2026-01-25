@@ -1,0 +1,75 @@
+Steg 2: Första Repository 
+
+1. git init first-repository
+
+2. cd first-repository
+   echo -e “duck\nmoose\ncat” > README.md
+
+3. git add . 
+   git commit -m “Initial commit”
+
+4. git branch feature1 
+   git checkout feature1
+ 
+5. sed -i ‘’ ’s/moose/mouse/‘ README.md   
+   echo ‘dog’ >> README.md 
+   git add . 
+   git commit -m “Change moose to mouse and add dog in the last line”
+
+6. git checkout main  
+   sed -i ‘’ ’s/moose/mammoth/' README.md 
+   git add . 
+   git commit -m “Change moose to mammoth”
+
+7. git merge feature1 
+   git status 
+   git diff 
+   open -e README.md (fixed the conflict manually in the file) 
+   git add README.md   
+   git commit -m “Conflict solved and merge all animals”
+
+8. git tag extinct
+
+9. git reset —hard HEAD^
+
+10. git branch feature2
+
+11. nano README.md (changed the first letter to a capital letter manually in the file) 
+    cat README.md 
+    git add README.md 
+    git commit -m “All animal names begin with a capital letter in README file”
+
+12. git checkout feature2 
+    touch fix1.txt 
+    git add fix1.txt 
+    git commit -m “Add fix1.txt” 
+    touch fix2.txt 
+    git add fix2.txt 
+    git commit -m “Add fix2.txt”
+ 
+13. git checkout main   
+    ls
+ 
+14. git log —branches (save hashcode of the fix2.txt commit)   
+    git cherry-pick 19db7d 
+    ls
+ 
+15. git branch cleanup_test 
+    git checkout cleanup_test 
+    echo ‘bird’ >> README.md 
+    git add README.md 
+    git commit -m “Add bird in README file” 
+    echo ‘fish’ >> README.md 
+    cat README.md 
+    git add README.md 
+    git commit -m “Add fish in README file" 
+    echo ‘snake’ >> README.md 
+    git add README.md 
+    git commit -m “Add snake in README file” 
+    git rebase -i main (vim editor -> changed two last pick for squash -> write new message of the commit “Added several animals”)
+ 
+16. echo ‘turtle’ >> README.md 
+    cat README.md 
+    git add README.md 
+    git commit -m “Addid turtle” 
+    git commit —amend -m “Added turtle”
