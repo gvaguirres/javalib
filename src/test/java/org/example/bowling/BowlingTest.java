@@ -63,6 +63,29 @@ public class BowlingTest {
         assertThat(bowlingGame.score()).isEqualTo(300);
     }
 
+    @Test
+    void normalGame(){
+        Bowling bowlingGame = new Bowling();
 
+        bowlingGame.roll(10);
+        bowlingGame.roll(3);
+        bowlingGame.roll(1);
+        bowlingGame.roll(9);
+        bowlingGame.roll(1);
+        bowlingGame.roll(8);
+        bowlingGame.roll(0);
+        bowlingGame.roll(6);
+        bowlingGame.roll(4);
+        bowlingGame.roll(0);
+        bowlingGame.roll(0);
+        bowlingGame.roll(0);
+        bowlingGame.roll(0);
+        bowlingGame.roll(10);
+        bowlingGame.roll(10);
+        bowlingGame.roll(5);
+        bowlingGame.roll(1);
+        bowlingGame.roll(0);
 
+        assertThat(bowlingGame.score()).isEqualTo(101);
+    }
 }
