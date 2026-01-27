@@ -20,4 +20,10 @@ public class Calculator {
         }
         return sum;
     }
+
+    public static float div(int a, int b){
+        return a/b;
+    //si hago este cambio y cambio al branch main
+    //este cambio también lo puedo ver porque es un cambio local
+    }
 }
