@@ -1,0 +1,21 @@
+name: CI-pipeline
+on:
+  push: ##vilka branches ska inkluderas ['main', 'dev']
+    branches:
+      - 'main'
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6.0.2
+      - name: Set up JDK
+        uses: actions/setup-java@v5.1.0
+        with:
+          java-version: '25'
+          distribution: 'temurin'
+          cache: 'maven'
+      - name: Make mvnw executable
+        run: chmod +x mvnw
+      - name: Compile and run tests
+        run: ./mvnw -B test
+
