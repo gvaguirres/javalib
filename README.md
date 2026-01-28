@@ -1,0 +1,3 @@
+Duck
+Mammoth
+Cat
