@@ -35,6 +35,12 @@
             <scope>test</scope>
         </dependency>
 
+        <dependency>
+            <groupId>org.awaitility</groupId>
+            <artifactId>awaitility</artifactId>
+            <version>4.3.0</version>
+        </dependency>
+
     </dependencies>
 
     <distributionManagement>
