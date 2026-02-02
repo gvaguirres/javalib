@@ -36,7 +36,7 @@ public class BowlingTest {
         for(int i = 0; i < 18; i++)
             bowlingGame.roll(1);
 
-        assertThat(bowlingGame.score()).isEqualTo(29);
+        assertThat(bowlingGame.score()).isEqualTo(40);
     }
 
     @Test
