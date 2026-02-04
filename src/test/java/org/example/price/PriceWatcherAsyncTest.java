@@ -26,17 +26,14 @@ public class PriceWatcherAsyncTest {
     @Test
     void sendNotificationWhenPriceLowerThanThreshold() throws InterruptedException {
 
-        Mockito.when(priceService.getPrice("T-shirt"))
-                .thenReturn(95);
+        Mockito.when(priceService.getPrice("T-shirt")).thenReturn(95);
 
         priceWatcher.checkPrices();
 
-//        inte snyggt
-//        Thread.sleep(2000);
-//        tenemos otra forma de hacerlo -> Awaitility (agregar dependency en pom.xml)
+        //        inte snyggt
+        //        Thread.sleep(2000);
+        //        tenemos otra forma de hacerlo -> Awaitility (agregar dependency en pom.xml)
 
-        Awaitility.await().atMost(5, TimeUnit.SECONDS)
-                .until(notificationService::isSent);
+        Awaitility.await().atMost(5, TimeUnit.SECONDS).until(notificationService::isSent);
     }
-
 }

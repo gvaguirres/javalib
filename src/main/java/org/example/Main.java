@@ -15,11 +15,13 @@ public class Main {
         Month month = currentDate.getMonth();
         int weekNumber = currentDate.get(WeekFields.of(Locale.getDefault()).weekOfWeekBasedYear());
 
-        String formattedOutput = String.format("Today is %s, %s %d. Week number: %d",
-                                                dayOfWeek.getDisplayName(java.time.format.TextStyle.FULL, Locale.getDefault()),
-                                                month.getDisplayName(java.time.format.TextStyle.FULL, Locale.getDefault()),
-                                                dayOfMonth,
-                                                weekNumber);
+        String formattedOutput =
+                String.format(
+                        "Today is %s, %s %d. Week number: %d",
+                        dayOfWeek.getDisplayName(java.time.format.TextStyle.FULL, Locale.getDefault()),
+                        month.getDisplayName(java.time.format.TextStyle.FULL, Locale.getDefault()),
+                        dayOfMonth,
+                        weekNumber);
         System.out.println(formattedOutput);
     }
 }

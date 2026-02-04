@@ -6,14 +6,16 @@ public class AsyncNotificationService implements NotificationService {
 
     @Override
     public void notify(String productName, int price) {
-        new Thread(()-> {
-            try {
+        new Thread(
+                () -> {
+                    try {
                 Thread.sleep(500);
                 isSent = true;
-            } catch (InterruptedException e) {
+                    } catch (InterruptedException e) {
                 throw new RuntimeException(e);
-            }
-        }).start();
+                    }
+                })
+                .start();
     }
 
     @Override
